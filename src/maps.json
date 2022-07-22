@@ -1,0 +1,167 @@
+[
+    {
+        "name": "erangel",
+        "start": {
+            "point": [
+                {
+                    "Alpha": "A"
+                },
+                {
+                    "Alpha": "I"
+                }
+            ]
+        },
+        "end": {
+            "point": [
+                {
+                    "Alpha": "H"
+                },
+                {
+                    "Alpha": "P"
+                }
+            ]
+        },
+        "limitations": [
+            {
+                "point": [
+                    {
+                        "Alpha": "A"
+                    },
+                    {
+                        "Alpha": "I"
+                    }
+                ]
+            },
+            {
+                "point": [
+                    {
+                        "Alpha": "A"
+                    },
+                    {
+                        "Alpha": "O"
+                    }
+                ]
+            },
+            {
+                "point": [
+                    {
+                        "Alpha": "A"
+                    },
+                    {
+                        "Alpha": "P"
+                    }
+                ]
+            },
+            {
+                "point": [
+                    {
+                        "Alpha": "B"
+                    },
+                    {
+                        "Alpha": "I"
+                    }
+                ]
+            },
+            {
+                "point": [
+                    {
+                        "Alpha": "B"
+                    },
+                    {
+                        "Alpha": "P"
+                    }
+                ]
+            },
+            {
+                "point": [
+                    {
+                        "Alpha": "C"
+                    },
+                    {
+                        "Alpha": "I"
+                    }
+                ]
+            },
+            {
+                "point": [
+                    {
+                        "Alpha": "C"
+                    },
+                    {
+                        "Alpha": "P"
+                    }
+                ]
+            },
+            {
+                "point": [
+                    {
+                        "Alpha": "D"
+                    },
+                    {
+                        "Alpha": "I"
+                    }
+                ]
+            },
+            {
+                "point": [
+                    {
+                        "Alpha": "G"
+                    },
+                    {
+                        "Alpha": "P"
+                    }
+                ]
+            },
+            {
+                "point": [
+                    {
+                        "Alpha": "H"
+                    },
+                    {
+                        "Alpha": "J"
+                    }
+                ]
+            },
+            {
+                "point": [
+                    {
+                        "Alpha": "H"
+                    },
+                    {
+                        "Alpha": "K"
+                    }
+                ]
+            },
+            {
+                "point": [
+                    {
+                        "Alpha": "H"
+                    },
+                    {
+                        "Alpha": "N"
+                    }
+                ]
+            },
+            {
+                "point": [
+                    {
+                        "Alpha": "H"
+                    },
+                    {
+                        "Alpha": "O"
+                    }
+                ]
+            },
+            {
+                "point": [
+                    {
+                        "Alpha": "H"
+                    },
+                    {
+                        "Alpha": "P"
+                    }
+                ]
+            }
+        ]
+    }
+]
