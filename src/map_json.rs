@@ -1,5 +1,6 @@
 use std::fs::File;
 use std::io::Read;
+use std::io::Write;
 
 use serde::Deserialize;
 use serde::Serialize;
@@ -11,7 +12,7 @@ use super::Map;
 #[derive(Serialize, Deserialize, PartialEq, Debug)]
 pub(crate) enum MapPointValue {
     Alpha(char),
-    Numeric(isize),
+    Numeric(usize),
 }
 
 #[derive(Serialize, Deserialize, PartialEq, Debug)]
@@ -20,13 +21,13 @@ pub(crate) struct MapPoint {
 }
 
 impl MapPoint {
-    pub(crate) fn to_tuple(&self) -> (isize, isize) {
+    pub(crate) fn to_tuple(&self) -> (usize, usize) {
         let first = match self.point.0 {
-            MapPointValue::Alpha(value) => (value as u8 - 65) as isize,
+            MapPointValue::Alpha(value) => (value as u8) as usize,
             MapPointValue::Numeric(value) => value,
         };
         let second = match self.point.1 {
-            MapPointValue::Alpha(value) => (value as u8 - 65) as isize,
+            MapPointValue::Alpha(value) => (value as u8) as usize,
             MapPointValue::Numeric(value) => value,
         };
         (first, second)
@@ -43,13 +44,18 @@ pub(crate) struct MapJson {
 
 impl From<MapJson> for Map {
     fn from(map_json: MapJson) -> Self {
+        let limitations: Vec<(usize, usize)> = map_json
+            .limitations()
+            .iter()
+            .map(|(x, y)| (x - map_json.x_range().0, y - map_json.y_range().0))
+            .collect();
         Self {
             name: map_json.name.clone(),
             x_type: map_json.x_range_type(),
             y_type: map_json.y_range_type(),
             x_range: map_json.x_range(),
             y_range: map_json.y_range(),
-            limitations: map_json.limitations().clone(),
+            limitations,
         }
     }
 }
@@ -69,31 +75,31 @@ impl MapJson {
         }
     }
 
-    pub(crate) fn x_range(&self) -> (isize, isize) {
+    pub(crate) fn x_range(&self) -> (usize, usize) {
         let start = match self.start.point.0 {
-            MapPointValue::Alpha(value) => (value as u8 - 65) as isize,
+            MapPointValue::Alpha(value) => (value as u8) as usize,
             MapPointValue::Numeric(value) => value,
         };
         let end = match self.end.point.0 {
-            MapPointValue::Alpha(value) => (value as u8 - 65) as isize,
+            MapPointValue::Alpha(value) => (value as u8) as usize,
             MapPointValue::Numeric(value) => value,
         };
         (start, end)
     }
 
-    pub(crate) fn y_range(&self) -> (isize, isize) {
+    pub(crate) fn y_range(&self) -> (usize, usize) {
         let start = match self.start.point.1 {
-            MapPointValue::Alpha(value) => (value as u8 - 65) as isize,
+            MapPointValue::Alpha(value) => (value as u8) as usize,
             MapPointValue::Numeric(value) => value,
         };
         let end = match self.end.point.1 {
-            MapPointValue::Alpha(value) => (value as u8 - 65) as isize,
+            MapPointValue::Alpha(value) => (value as u8) as usize,
             MapPointValue::Numeric(value) => value,
         };
         (start, end)
     }
 
-    pub(crate) fn limitations(&self) -> Vec<(isize, isize)> {
+    pub(crate) fn limitations(&self) -> Vec<(usize, usize)> {
         let mut limitations = Vec::new();
         for limitation in &self.limitations {
             limitations.push(limitation.to_tuple());
@@ -146,6 +152,25 @@ pub(crate) fn special_map(name: String) -> Option<Map> {
     let map_json = maps.into_iter().find(|map| map.name == name)?;
 
     Some(Map::from(map_json))
+}
+
+fn write_map_json() {
+    let mut vec = Vec::new();
+    for _ in 0..3 {
+        let mut map = MapJson::default();
+        map.limitations.push(MapPoint {
+            point: (MapPointValue::Alpha('A'), MapPointValue::Alpha('I')),
+        });
+        map.limitations.push(MapPoint {
+            point: (MapPointValue::Alpha('B'), MapPointValue::Alpha('J')),
+        });
+        vec.push(map);
+    }
+    let result = serde_json::to_string(&vec);
+    let result = result.unwrap();
+    let mut f = File::create("output.json").expect("Unable to create file");
+    f.write_all(result.as_bytes())
+        .expect("could not write data to file");
 }
 
 #[cfg(test)]
