@@ -163,5 +163,130 @@
                 ]
             }
         ]
+    },
+    {
+        "name": "deston",
+        "start": {
+            "point": [
+                {
+                    "Alpha": "A"
+                },
+                {
+                    "Alpha": "I"
+                }
+            ]
+        },
+        "end": {
+            "point": [
+                {
+                    "Alpha": "H"
+                },
+                {
+                    "Alpha": "P"
+                }
+            ]
+        },
+        "limitations": [
+            {
+                "point": [
+                    {
+                        "Alpha": "A"
+                    },
+                    {
+                        "Alpha": "I"
+                    }
+                ]
+            },
+            {
+                "point": [
+                    {
+                        "Alpha": "B"
+                    },
+                    {
+                        "Alpha": "P"
+                    }
+                ]
+            },
+            {
+                "point": [
+                    {
+                        "Alpha": "C"
+                    },
+                    {
+                        "Alpha": "P"
+                    }
+                ]
+            },
+            {
+                "point": [
+                    {
+                        "Alpha": "C"
+                    },
+                    {
+                        "Alpha": "P"
+                    }
+                ]
+            },
+            {
+                "point": [
+                    {
+                        "Alpha": "F"
+                    },
+                    {
+                        "Alpha": "P"
+                    }
+                ]
+            },
+            {
+                "point": [
+                    {
+                        "Alpha": "G"
+                    },
+                    {
+                        "Alpha": "I"
+                    }
+                ]
+            },
+            {
+                "point": [
+                    {
+                        "Alpha": "G"
+                    },
+                    {
+                        "Alpha": "P"
+                    }
+                ]
+            },
+            {
+                "point": [
+                    {
+                        "Alpha": "H"
+                    },
+                    {
+                        "Alpha": "I"
+                    }
+                ]
+            },
+            {
+                "point": [
+                    {
+                        "Alpha": "H"
+                    },
+                    {
+                        "Alpha": "O"
+                    }
+                ]
+            },
+            {
+                "point": [
+                    {
+                        "Alpha": "H"
+                    },
+                    {
+                        "Alpha": "P"
+                    }
+                ]
+            }
+        ]
     }
 ]
