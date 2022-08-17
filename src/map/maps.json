@@ -353,5 +353,110 @@
                 ]
             }
         ]
+    },
+    {
+        "name": "taego",
+        "start": {
+            "point": [
+                {
+                    "Alpha": "A"
+                },
+                {
+                    "Alpha": "I"
+                }
+            ]
+        },
+        "end": {
+            "point": [
+                {
+                    "Alpha": "H"
+                },
+                {
+                    "Alpha": "P"
+                }
+            ]
+        },
+        "limitations": [
+            {
+                "point": [
+                    {
+                        "Alpha": "A"
+                    },
+                    {
+                        "Alpha": "I"
+                    }
+                ]
+            },
+            {
+                "point": [
+                    {
+                        "Alpha": "A"
+                    },
+                    {
+                        "Alpha": "O"
+                    }
+                ]
+            },
+            {
+                "point": [
+                    {
+                        "Alpha": "A"
+                    },
+                    {
+                        "Alpha": "P"
+                    }
+                ]
+            },
+            {
+                "point": [
+                    {
+                        "Alpha": "B"
+                    },
+                    {
+                        "Alpha": "I"
+                    }
+                ]
+            },
+            {
+                "point": [
+                    {
+                        "Alpha": "B"
+                    },
+                    {
+                        "Alpha": "P"
+                    }
+                ]
+            },
+            {
+                "point": [
+                    {
+                        "Alpha": "C"
+                    },
+                    {
+                        "Alpha": "I"
+                    }
+                ]
+            },
+            {
+                "point": [
+                    {
+                        "Alpha": "E"
+                    },
+                    {
+                        "Alpha": "P"
+                    }
+                ]
+            },
+            {
+                "point": [
+                    {
+                        "Alpha": "H"
+                    },
+                    {
+                        "Alpha": "I"
+                    }
+                ]
+            }
+        ]
     }
 ]

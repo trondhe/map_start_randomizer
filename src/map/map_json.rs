@@ -5,9 +5,8 @@ use std::io::Write;
 use serde::Deserialize;
 use serde::Serialize;
 
-use super::RangeType;
-
-use super::Map;
+use super::common::Map;
+use super::common::RangeType;
 
 #[derive(Serialize, Deserialize, PartialEq, Debug)]
 pub(crate) enum MapPointValue {
