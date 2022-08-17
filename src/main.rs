@@ -1,16 +1,11 @@
+mod cli;
 mod map;
 
 use clap::Parser;
 use map::common::Map;
 
-#[derive(Parser, Debug)]
-struct Args {
-    #[clap(short, long, value_parser)]
-    name: Option<String>,
-}
-
 fn main() {
-    let args = Args::parse();
+    let args = cli::Args::parse();
 
     let map: Map = {
         if let Some(name) = args.name {
