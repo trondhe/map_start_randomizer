@@ -1,9 +1,7 @@
-#![allow(dead_code)]
+mod map;
 
 use clap::Parser;
 use map::common::Map;
-
-mod map;
 
 #[derive(Parser, Debug)]
 struct Args {

@@ -86,16 +86,10 @@ impl GridPrinter {
     pub(crate) const NEWLINE: char = '\n';
     pub(crate) const HORIZONTAL: char = '─';
     pub(crate) const VERTICAL: char = '│';
-    pub(crate) const CORNER_TOP_RIGHT: char = '┐';
-    pub(crate) const CORNER_TOP_LEFT: char = '┌';
-    pub(crate) const CORNER_BOTTOM_RIGHT: char = '┘';
-    pub(crate) const CORNER_BOTTOM_LEFT: char = '└';
-    pub(crate) const T: char = '┬';
     pub(crate) const T_90: char = '┤';
     pub(crate) const T_180: char = '┴';
     pub(crate) const T_270: char = '├';
     pub(crate) const CROSS: char = '┼';
-    pub(crate) const DASH: char = '-';
     pub(crate) const LIMITED: char = 'o';
     pub(crate) const COORDINATE: char = 'X';
 
@@ -168,6 +162,7 @@ impl GridPrinter {
         row
     }
 
+    #[allow(unused)]
     pub(crate) fn print_value_separater_row(x_size: usize) -> String {
         let mut row = String::new();
         row.push(Self::SPACE);

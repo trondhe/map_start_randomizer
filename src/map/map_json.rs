@@ -121,6 +121,8 @@ impl Default for MapJson {
         }
     }
 }
+
+#[allow(unused)]
 pub(crate) fn read_file() -> Option<String> {
     let file = File::open("specialMaps.json");
     if file.is_err() {
@@ -153,6 +155,7 @@ pub(crate) fn special_map(name: String) -> Option<Map> {
     Some(Map::from(map_json))
 }
 
+#[allow(unused)]
 fn write_map_json() {
     let mut vec = Vec::new();
     for _ in 0..3 {
